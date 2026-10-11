@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Gentree · Milosavljević family</title>
+<link rel="stylesheet" href="hub.css?v=1">
+</head>
+<body class="app-body">
+<!-- Three panels, after the Crēdo Marketing Hub design (MH-10): left = navigation, main = the item chosen in the
+     navigation (the family graph by default), right = a drawer with the details of the person or union clicked in main.
+     Every entity exists once; extra information is a tab on it. -->
+<header class="app-bar">
+  <button class="app-menu" id="app-menu" aria-label="Show navigation" aria-expanded="false">☰</button>
+  <a class="brand" href="#/graph">Gentree <small>Milosavljević family</small></a>
+  <nav class="app-crumbs" id="app-crumbs" aria-label="Location"></nav>
+  <div class="bar-right" id="app-right"></div>
+</header>
+<div class="app-grid">
+  <nav class="app-nav" id="app-nav" aria-label="Hub navigation">
+    <input class="app-filter" id="app-filter" type="search" placeholder="Filter the navigation" aria-label="Filter the navigation">
+    <div id="app-tree"></div>
+  </nav>
+  <main class="app-main" id="app-main" tabindex="-1"></main>
+</div>
+<aside class="app-drawer" id="app-drawer" aria-hidden="true" aria-labelledby="drawer-title">
+  <div class="drawer-head"><h2 id="drawer-title"></h2><button class="drawer-close" id="drawer-close" aria-label="Close the details">×</button></div>
+  <div class="drawer-body" id="drawer-body"></div>
+</aside>
+<div class="gate" id="gate" hidden>
+  <form class="gate-card" id="gate-form" autocomplete="off">
+    <h1>Gentree</h1>
+    <p>The Milosavljević family graph · enter the password.</p>
+    <label for="gate-pw">Password</label>
+    <input id="gate-pw" type="password" required autocomplete="current-password">
+    <button class="btn dl" type="submit">Open the family graph</button>
+    <p class="gate-msg" id="gate-msg" role="status" aria-live="polite"></p>
+  </form>
+</div>
+<script src="gate.js?v=1"></script>
+</body>
+</html>
