@@ -10,7 +10,7 @@
   var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
   var enc = encodeURIComponent, dec = decodeURIComponent;
   if (typeof PEOPLE === 'undefined' || typeof UNIONS === 'undefined') {
-    $('app-main').innerHTML = '<h1>Gentree</h1><p class="lead">The family data is not published on this site yet. It loads from the private repo locally, and will load from Firestore once sign-in exists.</p>';
+    $('app-main').innerHTML = '<h1>Gentree</h1><p class="lead">The family data could not be loaded (data/data.js is missing).</p>';
     return;
   }
 
