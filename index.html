@@ -10,7 +10,8 @@
 <body class="app-body">
 <!-- Three panels, after the Crēdo Marketing Hub design (MH-10): left = navigation, main = the item chosen in the
      navigation (the family graph by default), right = a drawer with the details of the person or union clicked in main.
-     Every entity exists once; extra information is a tab on it. -->
+     Every entity exists once; extra information is a tab on it.
+     Data: data/data.js, loaded as a plain script (not published on the mirror until sign-in exists). -->
 <header class="app-bar">
   <button class="app-menu" id="app-menu" aria-label="Show navigation" aria-expanded="false">☰</button>
   <a class="brand" href="#/graph">Gentree <small>Milosavljević family</small></a>
@@ -28,16 +29,7 @@
   <div class="drawer-head"><h2 id="drawer-title"></h2><button class="drawer-close" id="drawer-close" aria-label="Close the details">×</button></div>
   <div class="drawer-body" id="drawer-body"></div>
 </aside>
-<div class="gate" id="gate" hidden>
-  <form class="gate-card" id="gate-form" autocomplete="off">
-    <h1>Gentree</h1>
-    <p>The Milosavljević family graph · enter the password.</p>
-    <label for="gate-pw">Password</label>
-    <input id="gate-pw" type="password" required autocomplete="current-password">
-    <button class="btn dl" type="submit">Open the family graph</button>
-    <p class="gate-msg" id="gate-msg" role="status" aria-live="polite"></p>
-  </form>
-</div>
-<script src="gate.js?v=1"></script>
+<script src="data/data.js?v=1"></script>
+<script src="app.js?v=2"></script>
 </body>
 </html>

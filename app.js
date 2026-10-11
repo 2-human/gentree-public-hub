@@ -9,7 +9,10 @@
   var $ = function (id) { return document.getElementById(id); };
   var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
   var enc = encodeURIComponent, dec = decodeURIComponent;
-  if (typeof PEOPLE === 'undefined' || typeof UNIONS === 'undefined') { $('app-main').innerHTML = '<p class="empty">No family data loaded.</p>'; return; }
+  if (typeof PEOPLE === 'undefined' || typeof UNIONS === 'undefined') {
+    $('app-main').innerHTML = '<h1>Gentree</h1><p class="lead">The family data is not published on this site yet. It loads from the private repo locally, and will load from Firestore once sign-in exists.</p>';
+    return;
+  }
 
   /* ───────────── model ───────────── */
   var yearOf = function (d) { return d ? parseInt(String(d).slice(0, 4), 10) : null; };
@@ -459,7 +462,7 @@
   }
 
   /* ───────────── wiring ───────────── */
-  $('app-right').innerHTML = '<span class="bar-chip">' + people.size + ' people · ' + unions.size + ' unions</span><span class="bar-chip ' + (document.getElementById('gate').hidden ? 'ok' : '') + '">' + (/^https?:$/.test(location.protocol) && !/^(localhost|127\.0\.0\.1)$/.test(location.hostname) ? 'Gated' : 'Local') + '</span>';
+  $('app-right').innerHTML = '<span class="bar-chip">' + people.size + ' people · ' + unions.size + ' unions</span>';
   document.addEventListener('click', function (e) {
     var dt = e.target.closest('[data-dtab]'); if (dt) { pickDrawerTab(+dt.getAttribute('data-dtab')); return; }
     var t = e.target.closest('[data-tog]'); if (t) { var k = t.getAttribute('data-tog'); expanded[k] = t.getAttribute('aria-expanded') !== 'true'; renderTree(); return; }
